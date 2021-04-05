@@ -26,3 +26,13 @@ Route::get('nuevo',function(){
 Route::get('template',function(){
     return view('template');
 });
+
+// Calculate Amount
+Route::get('/calculateAmount',function(){
+    return view('showAmount');
+})->name('showAmount');
+
+
+Route::get('/confirmationBuy',function(){
+    return view('confirmationBuy');
+})->name('confirmationBuy');

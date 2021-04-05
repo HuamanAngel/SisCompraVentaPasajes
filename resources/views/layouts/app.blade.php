@@ -21,6 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styleTemplate.css') }}" rel="stylesheet">
     <link href="{{ asset('fonts/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
     @yield('contenido_cSS')
@@ -82,7 +83,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 content-main-layout">
             @yield('content')
         </main>
     </div>

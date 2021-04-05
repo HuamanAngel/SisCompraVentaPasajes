@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto&display=swap);
+.cardContainer1 {
+  border-color: #6d99a3;
+  border-width: 3px;
+  border-style: solid;
+  background-color: white;
+  font-family: "Nunito", sans-serif;
+}
+
+.buttonAmount {
+  font-weight: bold;
+  border-width: 0px 1px 1px 0px;
+}
+
+.buttonAmountHidden {
+  visibility: hidden;
+}
