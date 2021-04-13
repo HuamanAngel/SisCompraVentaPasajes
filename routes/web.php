@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItinerarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,3 +37,7 @@ Route::get('/calculateAmount',function(){
 Route::get('/confirmationBuy',function(){
     return view('confirmationBuy');
 })->name('confirmationBuy');
+
+Route::get('/showAllBus',[ItinerarioController::class,'index'])->name('showAllBus');
+Route::get('/fetch-price',[ItinerarioController::class,'fetchPrice']);
+Route::get('/fetch-service',[ItinerarioController::class,'fetchService']);
