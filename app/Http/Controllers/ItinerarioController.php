@@ -9,7 +9,7 @@ class ItinerarioController extends Controller
 {
     public function index(){
         $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->orderBy('iti_isAvailable','DESC')->get();
-        return view('showAllBus',compact('allItinerario'));
+        return view('VerConsulta',compact('allItinerario'));
     }
     // 1 : Para Precio
     // 2 : Para Salida
