@@ -49,3 +49,10 @@ Route::get('/fetch-result-terminal',[ItinerarioController::class,'fetchResultTer
 
 Route::get('Consulta', [ConsultaController::class,'Consulta']);
 Route::get('verConsulta', [ItinerarioController::class,'index'])->name('showAllBus');
+Route::get('registrar',function(){
+    return view('registrar');
+});
+
+Route::get('perfil',function(){
+    return view('perfil');
+});
