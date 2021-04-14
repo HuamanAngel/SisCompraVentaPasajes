@@ -48,7 +48,7 @@ Route::get('/fetch-price',[ItinerarioController::class,'fetchPrice']);
 Route::get('/fetch-service',[ItinerarioController::class,'fetchService']);
 Route::get('/fetch-result-terminal',[ItinerarioController::class,'fetchResultTerminal']);
 
-Route::get('Consulta', [CarController::class,'index']);
+Route::get('Consulta', [CarController::class,'index'])->name('executeQuery');
 Route::get('verConsulta', [ItinerarioController::class,'index'])->name('showAllBus');
 Route::get('registrar',function(){
     return view('registrar');

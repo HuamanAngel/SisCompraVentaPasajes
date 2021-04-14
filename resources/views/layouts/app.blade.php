@@ -90,7 +90,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="navbar-nav">
                     {{-- <li class="nav-item active"> <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a> </li> --}}
-                    <li style="font-weight: bold" class="nav-item @if($stringRuta == 'showAllBus') active @endif"> <a class="nav-link" href="{{ route('showAllBus') }}">CONSULTA</a> </li>
+                    <li style="font-weight: bold" class="nav-item @if($stringRuta == 'executeQuery' || $stringRuta == 'showAllBus'  ) active @endif"> <a class="nav-link" href="{{ route('executeQuery') }}">CONSULTA</a> </li>
                 </ul>
                 <div style="width:100%;font-size:30px;font-family: Pangolin" class="d-flex justify-content-center text-center">
                     BUSVID-19
