@@ -34,3 +34,7 @@ Route::get('registrar',function(){
 Route::get('perfil',function(){
     return view('perfil');
 });
+
+Route::get('perfil2',function(){
+    return view('perfil2');
+});

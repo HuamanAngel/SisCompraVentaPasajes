@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('contenido_js')
-<script src=”js/perfil.js” language=”Javascript”></script>
+
 @endsection
 
 @section('contenido_cSS')
@@ -11,221 +11,215 @@
 @section('content')
 <br>
 <br>
-<header class="header">
-          <nav class="navbar navbar-toggleable-md navbar-light pt-0 pb-0 ">
-            
-            
-            <div class="float-left"> <a href="#" class="button-left"><span class="fa fa-fw fa-bars "></span></a> </div>
-            <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavDropdown">
-              <ul class="navbar-nav">
-                <li class="nav-item dropdown messages-menu">
-                  <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-bell-o"></i>
-                    <span class="label label-success bg-success">10</span>
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <ul class="dropdown-menu-over list-unstyled">
-                      <li class="header-ul text-center">You have 4 messages</li>
-                      <li>
-                        <!-- inner menu: contains the actual data -->
-                        <ul class="menu list-unstyled">
-                          <li><!-- start message -->
-                          <a href="#">
-                            <div class="pull-left">
-                              <img src="http://via.placeholder.com/160x160" class="rounded-circle  " alt="User Image">
-                            </div>
-                            <h4>
-                            Support Team
-                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                            </h4>
-                            <p>Why not buy a new awesome theme?</p>
-                          </a>
-                        </li>
-                        <!-- end message -->
-                        <li>
-                          <a href="#">
-                            <div class="pull-left">
-                              <img src="http://via.placeholder.com/160x160" class="rounded-circle " alt="User Image">
-                            </div>
-                            <h4>
-                            AdminLTE Design Team
-                            <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                            </h4>
-                            <p>Why not buy a new awesome theme?</p>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <div class="pull-left">
-                              <img src="http://via.placeholder.com/160x160" class="rounded-circle " alt="User Image">
-                            </div>
-                            <h4>
-                            Developers
-                            <small><i class="fa fa-clock-o"></i> Today</small>
-                            </h4>
-                            <p>Why not buy a new awesome theme?</p>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <div class="pull-left">
-                              <img src="http://via.placeholder.com/160x160" class="rounded-circle " alt="User Image">
-                            </div>
-                            <h4>
-                            Sales Department
-                            <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                            </h4>
-                            <p>Why not buy a new awesome theme?</p>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <div class="pull-left">
-                              <img src="http://via.placeholder.com/160x160" class="rounded-circle " alt="User Image">
-                            </div>
-                            <h4>
-                            Reviewers
-                            <small><i class="fa fa-clock-o"></i> 2 days</small>
-                            </h4>
-                            <p>Why not buy a new awesome theme?</p>
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="footer-ul text-center"><a href="#">See All Messages</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item dropdown notifications-menu">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-envelope-o"></i>
-                  <span class="label label-warning bg-warning">10</span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <ul class="dropdown-menu-over list-unstyled">
-                    <li class="header-ul text-center">You have 10 notifications</li>
-                    <li>
-                      <!-- inner menu: contains the actual data -->
-                      <ul class="menu list-unstyled">
-                        <li>
-                          <a href="#">
-                            <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                            page and may cause design problems
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="fa fa-users text-red"></i> 5 new members joined
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <i class="fa fa-user text-red"></i> You changed your username
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="footer-ul text-center"><a href="#">View all</a></li>
-                  </ul>
-                </div>
-              </li>
-              
-              <li class="nav-item dropdown  user-menu">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img src="http://via.placeholder.com/160x160" class="user-image" alt="User Image" >
-                  <span class="hidden-xs">bootstrap develop</span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-      <div class="main">
-        <aside>
-          <div class="sidebar left ">
-            <div class="user-panel">
-              <div class="pull-left image">
-                <img src="http://via.placeholder.com/160x160" class="rounded-circle" alt="User Image">
-              </div>
-              <div class="pull-left info">
-                <p>bootstrap develop</p>
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-              </div>
+
+<body>
+    <div class="container main-secction">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 image-section">
+                <img src="https://png.pngtree.com/thumb_back/fw800/back_pic/00/08/57/41562ad4a92b16a.jpg">
             </div>
-            <ul class="list-sidebar bg-defoult">
-              <li> <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="nav-label"> Dashboards </span> <span class="fa fa-chevron-left pull-right"></span> </a>
-              <ul class="sub-menu collapse" id="dashboard">
-                <li class="active"><a href="#">CSS3 Animation</a></li>
-                <li><a href="#">General</a></li>
-                <li><a href="#">Buttons</a></li>
-                <li><a href="#">Tabs & Accordions</a></li>
-                <li><a href="#">Typography</a></li>
-                <li><a href="#">FontAwesome</a></li>
-                <li><a href="#">Slider</a></li>
-                <li><a href="#">Panels</a></li>
-                <li><a href="#">Widgets</a></li>
-                <li><a href="#">Bootstrap Model</a></li>
-              </ul>
-            </li>
-            <li> <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a> </li>
-            <li> <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active" > <i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span> <span class="fa fa-chevron-left pull-right"></span> </a>
-            <ul class="sub-menu collapse" id="products">
-              <li class="active"><a href="#">CSS3 Animation</a></li>
-              <li><a href="#">General</a></li>
-              <li><a href="#">Buttons</a></li>
-              <li><a href="#">Tabs & Accordions</a></li>
-              <li><a href="#">Typography</a></li>
-              <li><a href="#">FontAwesome</a></li>
-              <li><a href="#">Slider</a></li>
-              <li><a href="#">Panels</a></li>
-              <li><a href="#">Widgets</a></li>
-              <li><a href="#">Bootstrap Model</a></li>
-            </ul>
-          </li>
-          <li> <a href="#"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a> </li>
-          <li> <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active" ><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa fa-chevron-left pull-right"></span></a>
-          <ul  class="sub-menu collapse" id="tables" >
-            <li><a href=""> Static Tables</a></li>
-            <li><a href=""> Data Tables</a></li>
-            <li><a href=""> Foo Tables</a></li>
-            <li><a href=""> jqGrid</a></li>
-          </ul>
-        </li>
-        <li> <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active" ><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa fa-chevron-left pull-right"></span></a>
-        <ul  class="sub-menu collapse" id="e-commerce" >
-          <li><a href=""> Products grid</a></li>
-          <li><a href=""> Products list</a></li>
-          <li><a href="">Product edit</a></li>
-          <li><a href=""> Product detail</a></li>
-          <li><a href="">Cart</a></li>
-          <li><a href=""> Orders</a></li>
-          <li><a href=""> Credit Card form</a> </li>
-        </ul>
-      </li>
-      <li> <a href=""><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span> </a></li>
-      <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label"></span></a> </li>
-      <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label"></span></a> </li>
-      <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label"></span></a> </li>
-      <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label"></span></a> </li>
-      <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label"></span></a> </li>
-    </ul>
+            <div class="row user-left-part">
+                <div class="col-md-3 col-sm-3 col-xs-12 user-profil-part pull-left">
+                    <div class="row ">
+                        <div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center">
+                            <img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user-purple.png" class="rounded-circle">
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 user-detail-section1 text-center">
+                            <button id="btn-contact" (click)="clearModal()" data-toggle="modal" data-target="#contact" class="btn btn-success btn-block follow">Contactarme</button> 
+                            <button class="btn btn-warning btn-block">Descargar Curriculum</button>                               
+                        </div>
+                        <div class="row user-detail-row">
+                            <div class="col-md-12 col-sm-12 user-detail-section2 pull-left">
+                                <div class="border"></div>
+                                <p>FOLLOWER</p>
+                                <span>320</span>
+                            </div>                           
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-12 pull-right profile-right-section">
+                    <div class="row profile-right-section-row">
+                        <div class="col-md-12 profile-header">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-6 col-xs-6 profile-header-section1 pull-left">
+                                    <h1>Juan Perez</h1>
+                                    <h5>Developer</h5>
+                                </div>
+                                <div class="col-md-4 col-sm-6 col-xs-6 profile-header-section1 text-right pull-rigth">
+                                    <a href="/search" class="btn btn-primary btn-block">Seguir buscando</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-8">
+                                        <ul class="nav nav-tabs" role="tablist">
+                                                <li class="nav-item">
+                                                  <a class="nav-link active" href="#profile" role="tab" data-toggle="tab"><i class="fas fa-user-circle"></i> Perfil Profesional</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                  <a class="nav-link" href="#buzz" role="tab" data-toggle="tab"><i class="fas fa-info-circle"></i> Información Detallada</a>
+                                                </li>                                                
+                                              </ul>
+                                              
+                                              <!-- Tab panes -->
+                                              <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane fade show active" id="profile">
+                                                        <div class="row">
+                                                                <div class="col-md-2">
+                                                                    <label>ID</label>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <p>509230671</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-2">
+                                                                    <label>Nombre</label>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <p>Juan Perez</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-2">
+                                                                    <label>Email</label>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <p>juanp@gmail.com</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-2">
+                                                                    <label>Teléfono</label>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <p>12345678</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-2">
+                                                                    <label>Profesion</label>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <p>Developer</p>
+                                                                </div>
+                                                            </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane fade" id="buzz">
+                                                        <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label>Experience</label>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <p>Expert</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label>Hourly Rate</label>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <p>10$/hr</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label>Total Projects</label>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <p>230</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label>English Level</label>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <p>Expert</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label>Availability</label>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <p>6 months</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <label>Your Bio</label>
+                                                                    <br/>
+                                                                    <p>Your detail description</p>
+                                                                </div>
+                                                            </div>
+                                                </div>
+                                                
+                                              </div>
+                          
+                                </div>
+                                <div class="col-md-4 img-main-rightPart">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row image-right-part">
+                                                <div class="col-md-6 pull-left image-right-detail">
+                                                    <h6>PUBLICIDAD</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="http://camaradecomerciozn.com/">
+                                            <div class="col-md-12 image-right">
+                                                <img src="http://pluspng.com/img-png/bootstrap-png-bootstrap-512.png">
+                                            </div>
+                                        </a>
+                                        <div class="col-md-12 image-right-detail-section2">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    </aside>
+
+    <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contact">Contactarme</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <p for="msj">Se enviará este mensaje a la persona que desea contactar, indicando que te quieres comunicar con el. Para esto debes de ingresar tu información personal.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtFullname">Nombre completo</label>
+                        <input type="text" id="txtFullname" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtEmail">Email</label>
+                        <input type="text" id="txtEmail" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtPhone">Teléfono</label>
+                        <input type="text" id="txtPhone" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" (click)="openModal()" data-dismiss="modal">Guardar</button>
+                </div>
+            </div>
+        </div>
     </div>
+</body>
 @endsection
 
