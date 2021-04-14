@@ -13,12 +13,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ConsultaController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('nuevo',function(){
@@ -41,3 +43,6 @@ Route::get('/confirmationBuy',function(){
 Route::get('/showAllBus',[ItinerarioController::class,'index'])->name('showAllBus');
 Route::get('/fetch-price',[ItinerarioController::class,'fetchPrice']);
 Route::get('/fetch-service',[ItinerarioController::class,'fetchService']);
+Route::get('Consulta', [ConsultaController::class,'Consulta']);
+
+Route::get('verConsulta', [ConsultaController::class,'verConsulta']);
