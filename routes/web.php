@@ -12,12 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ConsultaController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('nuevo',function(){
@@ -26,3 +28,7 @@ Route::get('nuevo',function(){
 Route::get('template',function(){
     return view('template');
 });
+
+Route::get('Consulta', [ConsultaController::class,'Consulta']);
+
+Route::get('verConsulta', [ConsultaController::class,'verConsulta']);
