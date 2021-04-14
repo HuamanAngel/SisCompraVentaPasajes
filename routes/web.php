@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\ItinerarioController;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ConsultaController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -57,9 +59,10 @@ Route::get('registrar',function(){
 Route::get('perfil',function(){
     return view('perfil');
 });
-Route::post('ResultadoConsulta', [CarController::class,'consulta_datos'])->name('result_query');
+// Route::post('ResultadoConsulta', [CarController::class,'consulta_datos'])->name('result_query');
+Route::post('ResultadoConsulta', [ItinerarioController::class,'consulta_datos'])->name('result_query');
 
 
-Route::get('perfil2',function(){
-    return view('perfil2');
-});
+
+Route::get('perfil2',[UserController::class,'index'])->name('perfilUserNow');
+Route::post('perfil2',[UserController::class,'editUser'])->name('perfilEditNow');

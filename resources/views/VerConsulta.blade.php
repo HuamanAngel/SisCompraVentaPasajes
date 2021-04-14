@@ -177,6 +177,16 @@
 </div>
 
 
+<div class="getAllDirection" style="display: none">
+        @if($allItinerario!=null && $allItinerario->count()>0)
+            <input type="hidden" class="valueOrigin" name="originDepa" type="text" value="{{ $allItinerario[0]->iti_depa_origen }}">
+            <input type="hidden" class="valueDestino" name="destinoDepa" type="text" value="{{ $allItinerario[0]->iti_depa_llegada }}">
+        @else
+            <input type="hidden" class="valueOrigin" name="originDepa" type="text" value="">
+            <input type="hidden" class="valueDestino" name="destinoDepa" type="text" value="">
+        
+        @endif
+</div>
 
 </section>
 <!--Bootstrap js-->
@@ -187,6 +197,8 @@
     {{-- Ajax solo para filtro --}}
 <script>
     let valueService = -1;
+    let valueOriginDepa =  $('.getAllDirection').find('.valueOrigin').val();
+    let valueDestinoDepa = $('.getAllDirection').find('.valueDestino').val();
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') //Obtiene el token 										csrf
@@ -208,7 +220,7 @@
             $.ajax({
                 url: "/fetch-price",
                 method:"GET",
-                data:{'optionFilter':valueOption,'directionFilter':valueFilter,'valueService':valueService},
+                data:{'optionFilter':valueOption,'directionFilter':valueFilter,'valueService':valueService,'CiudadOrigen':valueOriginDepa,'CiudadDestino':valueDestinoDepa},
                 success: function(data) {
                     $("#content-central-allbus").html(data);
                     $("#content-central-allbus").removeClass('div-disabled');
@@ -239,7 +251,7 @@
                 $.ajax({
                     url: "/fetch-service",
                     method:"GET",
-                    data:{'optionFilterService':valueOption},
+                    data:{'optionFilterService':valueOption,'CiudadOrigen':valueOriginDepa,'CiudadDestino':valueDestinoDepa},
                     success: function(data) {
                         $("#content-central-allbus").html(data);
                         $("#content-central-allbus").removeClass('div-disabled');
@@ -273,7 +285,7 @@
                 $.ajax({
                 url: "/fetch-result-terminal",
                 method:"GET",
-                data:{'optionFilter':valueTerminal,'nameFilter':nameTerminal,'valueService':valueService},
+                data:{'optionFilter':valueTerminal,'nameFilter':nameTerminal,'valueService':valueService,'CiudadOrigen':valueOriginDepa,'CiudadDestino':valueDestinoDepa},
                 success: function(data) {
                     $("#content-central-allbus").html(data);
                     $("#content-central-allbus").removeClass('div-disabled');

@@ -8,9 +8,17 @@ use App\Models\Itinerario;
 class ItinerarioController extends Controller
 {
     public function index(){
-        $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->orderBy('iti_isAvailable','DESC')->get();
+        $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->orderBy('iti_isAvailable','DESC')->get();
         return view('VerConsulta',compact('allItinerario'));
     }
+
+    public function consulta_datos(Request $request){
+
+        $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_depa_origen','iti_depa_llegada','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->orderBy('iti_isAvailable','DESC')->get();
+        return view('VerConsulta',compact('allItinerario'));
+    }
+
+
     // 1 : Para Precio
     // 2 : Para Salida
     // 3 : Para Disponible
@@ -19,35 +27,38 @@ class ItinerarioController extends Controller
 
     // 1 : Descendente
     // 2 : Ascendente
+
+
+
     public function fetchPrice(Request $request){
         if($request->ajax()){
             if($request->valueService == -1 || $request->valueService == 0){
                 if($request->optionFilter==1){
                     if($request->directionFilter == 1){
-                        $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->orderBy('iti_price','DESC')->get();
+                        $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->orderBy('iti_price','DESC')->get();
                     }else if($request->directionFilter == 2){
-                        $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->orderBy('iti_price','ASC')->get();
+                        $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->orderBy('iti_price','ASC')->get();
                     }
                 }
                 if($request->optionFilter==2){
                     if($request->directionFilter == 1){
-                        $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->orderBy('iti_salida','DESC')->get();
+                        $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->orderBy('iti_salida','DESC')->get();
                     }else if($request->directionFilter == 2){
-                        $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->orderBy('iti_salida','ASC')->get();
+                        $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->orderBy('iti_salida','ASC')->get();
                     }
                 }
                 if($request->optionFilter==3){
                     if($request->directionFilter == 1){
-                        $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->orderBy('iti_isAvailable','DESC')->get();
+                        $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->orderBy('iti_isAvailable','DESC')->get();
                     }else if($request->directionFilter == 2){
-                        $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->orderBy('iti_isAvailable','ASC')->get();
+                        $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->orderBy('iti_isAvailable','ASC')->get();
                     }
                 }
                 if($request->optionFilter==4){
                     if($request->directionFilter == 1){
-                        $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->orderBy('iti_quantitySeat','DESC')->get();
+                        $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->orderBy('iti_quantitySeat','DESC')->get();
                     }else if($request->directionFilter == 2){
-                        $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->orderBy('iti_quantitySeat','ASC')->get();
+                        $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->orderBy('iti_quantitySeat','ASC')->get();
                     }
                 }
             }else{                
@@ -79,24 +90,24 @@ class ItinerarioController extends Controller
         if($request->ajax()){
             if($request->optionFilterService==0){
                 $serviceName = "WIFI";
-                $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->orderBy('iti_price','ASC')->get();
+                $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->orderBy('iti_price','ASC')->get();
             }
 
             if($request->optionFilterService==1){
                 $serviceName = "WIFI";
-                $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_service',$serviceName)->orderBy('iti_price','ASC')->get();
+                $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->where('iti_service',$serviceName)->orderBy('iti_price','ASC')->get();
             }
             if($request->optionFilterService==2){
                 $serviceName = "TV";
-                $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_service',$serviceName)->orderBy('iti_price','ASC')->get();
+                $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->where('iti_service',$serviceName)->orderBy('iti_price','ASC')->get();
             }
             if($request->optionFilterService==3){
                 $serviceName = "Baño";
-                $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_service',$serviceName)->orderBy('iti_price','ASC')->get();
+                $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->where('iti_service',$serviceName)->orderBy('iti_price','ASC')->get();
             }
             if($request->optionFilterService==4){
                 $serviceName = "Ninguno";
-                $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_service',$serviceName)->orderBy('iti_price','ASC')->get();
+                $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->where('iti_service',$serviceName)->orderBy('iti_price','ASC')->get();
             }
 
             return view('partials.busContent',compact('allItinerario'));     
@@ -109,30 +120,30 @@ class ItinerarioController extends Controller
     public function selectServiceFilter(Request $request,string $serviceName){
         if($request->optionFilter==1){
             if($request->directionFilter == 1){
-                $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_service',$serviceName)->orderBy('iti_price','DESC')->get();
+                $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->where('iti_service',$serviceName)->orderBy('iti_price','DESC')->get();
             }else if($request->directionFilter == 2){
-                $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_service',$serviceName)->orderBy('iti_price','ASC')->get();
+                $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->where('iti_service',$serviceName)->orderBy('iti_price','ASC')->get();
             }
         }
         if($request->optionFilter==2){
             if($request->directionFilter == 1){
-                $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_service',$serviceName)->orderBy('iti_salida','DESC')->get();
+                $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->where('iti_service',$serviceName)->orderBy('iti_salida','DESC')->get();
             }else if($request->directionFilter == 2){
-                $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_service',$serviceName)->orderBy('iti_salida','ASC')->get();
+                $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->where('iti_service',$serviceName)->orderBy('iti_salida','ASC')->get();
             }
         }
         if($request->optionFilter==3){
             if($request->directionFilter == 1){
-                $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_service',$serviceName)->orderBy('iti_isAvailable','DESC')->get();
+                $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->where('iti_service',$serviceName)->orderBy('iti_isAvailable','DESC')->get();
             }else if($request->directionFilter == 2){
-                $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_service',$serviceName)->orderBy('iti_isAvailable','ASC')->get();
+                $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->where('iti_service',$serviceName)->orderBy('iti_isAvailable','ASC')->get();
             }
         }
         if($request->optionFilter==4){
             if($request->directionFilter == 1){
-                $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_service',$serviceName)->orderBy('iti_quantitySeat','DESC')->get();
+                $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->where('iti_service',$serviceName)->orderBy('iti_quantitySeat','DESC')->get();
             }else if($request->directionFilter == 2){
-                $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_service',$serviceName)->orderBy('iti_quantitySeat','ASC')->get();
+                $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->where('iti_service',$serviceName)->orderBy('iti_quantitySeat','ASC')->get();
             }
         }        
         return $allItinerario;
@@ -145,10 +156,10 @@ class ItinerarioController extends Controller
             // if($request->nameFilter==null || $request->nameFilter=="" || $request->nameFilter==" "){
             // }
             if($request->optionFilter == 1){
-                $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_terminal_llegada','LIKE',"%{$request->nameFilter}%")->orderBy('iti_quantitySeat','DESC')->get();
+                $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->where('iti_terminal_llegada','LIKE',"%{$request->nameFilter}%")->orderBy('iti_quantitySeat','DESC')->get();
             }
             if($request->optionFilter == 2){
-                $allItinerario = Itinerario::select('iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_terminal_origen','LIKE',"%{$request->nameFilter}%")->orderBy('iti_quantitySeat','DESC')->get();
+                $allItinerario = Itinerario::select('iti_depa_origen','iti_depa_llegada','iti_price','iti_terminal_llegada','iti_terminal_origen','iti_salida','iti_isAvailable','iti_quantitySeat','iti_service')->where('iti_depa_origen','LIKE',"%{$request->CiudadOrigen}%")->where('iti_depa_llegada','LIKE',"%{$request->CiudadDestino}%")->where('iti_terminal_origen','LIKE',"%{$request->nameFilter}%")->orderBy('iti_quantitySeat','DESC')->get();
             }
             // return $request->nameFilter;
             return view('partials.busContent',compact('allItinerario'));     

@@ -11,20 +11,20 @@
 @section('content')
 
 <body>
-    <div class="container main-container">
-        <div class="d-flex">
-            <div id="sidebar-container" class=bg-primary>
+    <div class="main-container">
+        <div class="m-4 d-flex">
+            <div id="sidebar-container" class="bg-primary">
                 <div class="logo">
                     <h4 class="text-light font-weight-bold">Busvid 19</h4>
                 </div>
                 <div class="menu">
-                    <a href="#" class="d-block text-light p-3"><ion-icon name="person" class="mr-2 lead"></ion-icon>Perfil</a>
-                    <a href="#" class="d-block text-light p-3"><ion-icon name="clipboard" class="mr-2 lead"></ion-icon>Historial</a>
-                    <a href="#" class="d-block text-light p-3"><ion-icon name="construct" class="mr-2 lead"></ion-icon>configuracion</a>
+                    <a href="#" class="d-block text-light p-3"><ion-icon name="person" class="mr-2 lead"></ion-icon>Mis Datos</a>
+                    <a href="#" class="d-block text-light p-3"><ion-icon name="clipboard" class="mr-2 lead"></ion-icon>Mis pasajes</a>
+                    {{-- <a href="#" class="d-block text-light p-3"><ion-icon name="construct" class="mr-2 lead"></ion-icon>configuracion</a> --}}
                 </div>
             </div> 
             <div class="w-100">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                {{-- <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
@@ -43,9 +43,94 @@
                              </li>
                         </ul>
                      </div>
-                </nav>
+                </nav> --}}
 
-                <div id=content>
+
+
+                <div class="container">
+                    <div class="row gutters">
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <form action="{{ route('perfilEditNow') }}" method="POST">
+                                <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h4 class="mb-2 text-primary">Datos Personales</h4>
+                                </div>
+                                    @csrf
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <label for="phone">Usuario</label>
+                                            <input type="text" class="form-control" name="usuario" disabled value="{{ Auth::user()->user }}" id="fullName" placeholder="Enter full name">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <label for="fullName">Nombre</label>
+                                            <input type="text" class="form-control" name="name" value="{{ Auth::user()->use_name }}" id="fullName" placeholder="Enter full name">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <label for="fullName">Apellidos</label>
+                                            <input type="text" class="form-control" name="lastname" value="{{ Auth::user()->use_apellido }}" id="fullName" placeholder="Enter full name">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <label for="eMail">Email</label>
+                                            <input type="text" class="form-control" name="email" value="{{ Auth::user()->email }}" id="fullName" placeholder="Enter full name">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <label for="phone">Telefono</label>
+                                            <input type="number" class="form-control" name="telefono" value="{{ Auth::user()->use_tel }}" id="fullName" placeholder="Enter full name">
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <label for="phone">Genero</label>
+                                            <input type="text" class="form-control" name="genero" disabled value="{{ Auth::user()->use_sexo }}" id="fullName" placeholder="Enter full name">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <label for="phone">DNI</label>
+                                            <input type="text" class="form-control" name="dni" disabled value="{{ Auth::user()->use_dni }}" id="fullName" placeholder="Enter full name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row gutters">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="text-right">
+                                            {{-- <button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button> --}}
+                                            <button type="submit" id="submit" name="submit" class="btn btn-primary">Actualizar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+
+
+
+
+                {{-- <div id=content>
                     <section class="py-3">
                         <div class="container">
                             <div class="row">
@@ -110,7 +195,7 @@
                                   
                     </section>
                     
-                </div>
+                </div> --}}
                     
             </div>
 
@@ -122,4 +207,18 @@
 
 
 </body>
+@endsection
+
+@section('contenido_abajo_js')
+    
+
+@if (session('updateSuccess'))
+    <script>
+        Swal.fire({
+            title: "Categoria fue actualizado correctamente",
+            text:  "{{session('updateSuccess')}}",
+            icon: "success"
+        });
+    </script>
+@endif
 @endsection

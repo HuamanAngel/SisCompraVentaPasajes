@@ -23,11 +23,11 @@
             <p>Esperamos que su registro sea rapido y sencillo :)</p>
             
         </div>
-        <div class="col-md-9 register-right">
+        <div class="col-md-9 register-right" style="background: rgba(82,159,55,0.8);">
             
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <h3 class="register-heading">Nuevo Usuario</h3>
+            <div class="tab-content" id="myTabContent" >
+                <div class="tab-pane fade show active"  style="background: transparent !important" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="register-heading text-white" >¡ INSERTA TUS DATOS AHORA ¡</h3>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 

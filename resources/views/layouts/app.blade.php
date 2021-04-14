@@ -30,7 +30,9 @@
     <link href="{{ asset('fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
     <style>
     .navbar {
-        background: linear-gradient(0.25turn, rgba(31, 171, 31,0.9), rgba(38, 210, 38,0.9), rgba(31, 171, 31,0.9)) !important;
+        /* background: linear-gradient(0.25turn, rgba(31, 171, 31,0.9), rgba(38, 210, 38,0.9), rgba(31, 171, 31,0.9)) !important; */
+        /* background-color: rgba(0, 0, 0, 0.7) !important;  */
+        background: radial-gradient(circle at 50% -20.71%, #b7f4ff 0, #6c90d8 0%, #2c3750 100%);
         color: white !important;
     }
 }
@@ -90,7 +92,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="navbar-nav">
                     {{-- <li class="nav-item active"> <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a> </li> --}}
-                    <li style="font-weight: bold" class="nav-item @if($stringRuta == 'executeQuery' || $stringRuta == 'showAllBus'  ) active @endif"> <a class="nav-link" href="{{ route('executeQuery') }}">CONSULTA</a> </li>
+                    <li style="font-weight: bold" class="nav-item @if($stringRuta == 'executeQuery' || $stringRuta == 'showAllBus'  || $stringRuta='ResultadoConsulta' ) active @endif"> <a class="nav-link" href="{{ route('executeQuery') }}">CONSULTA</a> </li>
                 </ul>
                 <div style="width:100%;font-size:30px;font-family: Pangolin" class="d-flex justify-content-center text-center">
                     BUSVID-19
@@ -126,6 +128,10 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+                                    <a class="dropdown-item" href="{{ route('perfilUserNow') }}">
+                                        Mi Perfil
+                                    </a>
+
                                 </div>
                             </li>
                         @endguest

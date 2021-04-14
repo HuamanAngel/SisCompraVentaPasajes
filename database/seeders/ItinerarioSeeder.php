@@ -34,49 +34,51 @@ class ItinerarioSeeder extends Seeder
         'iti_depa_llegada'=>"Ancash",
         'iti_service'=>'Ninguno'
         ]);
-//
-        DB::table('itinerarios')->insert(['iti_price'=>90
-        ,'iti_terminal_llegada'=>'Terminal Terrestre Apurimac'
-        ,'iti_terminal_origen'=>'Terminal Terrestre Santa'
-        ,'iti_salida'=>'2021-05-20 17:45:49',
+//Apurimac - Ancash
+
+        DB::table('itinerarios')->insert(['iti_price'=>100
+        ,'iti_terminal_llegada'=>'Terminal Terrestre Abancay'
+        ,'iti_terminal_origen'=>'Terminal Terrestre Chimbote'
+        ,'iti_salida'=>'2021-05-20 18:12:00',
         'iti_isAvailable'=>true,
-        'iti_quantitySeat'=>12,
+        'iti_quantitySeat'=>22,
         'iti_depa_origen'=>"Ancash",
         'iti_depa_llegada'=>"Apurimac",
         'iti_service'=>'WIFI'
         ]);
-        DB::table('itinerarios')->insert(['iti_price'=>90
+        DB::table('itinerarios')->insert(['iti_price'=>20
         ,'iti_terminal_llegada'=>'Terminal Terrestre Apurimac'
         ,'iti_terminal_origen'=>'Terminal Terrestre Santa'
-        ,'iti_salida'=>'2021-05-20 17:45:49',
+        ,'iti_salida'=>'2021-05-20 11:00:00',
+        'iti_isAvailable'=>false,
+        'iti_quantitySeat'=>30,
+        'iti_depa_origen'=>"Ancash",
+        'iti_depa_llegada'=>"Apurimac",
+        'iti_service'=>'TV'
+        ]);
+        //
+        DB::table('itinerarios')->insert(['iti_price'=>90
+        ,'iti_terminal_llegada'=>'Terminal Terrestre Grau'
+        ,'iti_terminal_origen'=>'Terminal Terrestre Yungay'
+        ,'iti_salida'=>'2021-05-20 20:00:00',
         'iti_isAvailable'=>false,
         'iti_quantitySeat'=>12,
         'iti_depa_origen'=>"Ancash",
         'iti_depa_llegada'=>"Apurimac",
         'iti_service'=>'WIFI'
         ]);
-        //
-        DB::table('itinerarios')->insert(['iti_price'=>90
+        DB::table('itinerarios')->insert(['iti_price'=>150
         ,'iti_terminal_llegada'=>'Terminal Terrestre Apurimac'
         ,'iti_terminal_origen'=>'Terminal Terrestre Santa'
-        ,'iti_salida'=>'2021-05-20 17:45:49',
-        'iti_isAvailable'=>false,
-        'iti_quantitySeat'=>12,
-        'iti_depa_origen'=>"Ancash",
-        'iti_depa_llegada'=>"Apurimac",
-        'iti_service'=>'WIFI'
-        ]);
-        DB::table('itinerarios')->insert(['iti_price'=>90
-        ,'iti_terminal_llegada'=>'Terminal Terrestre Apurimac'
-        ,'iti_terminal_origen'=>'Terminal Terrestre Santa'
-        ,'iti_salida'=>'2021-05-20 17:45:49',
+        ,'iti_salida'=>'2021-05-20 12:00:00',
         'iti_isAvailable'=>true,
         'iti_quantitySeat'=>12,
         'iti_depa_origen'=>"Ancash",
         'iti_depa_llegada'=>"Apurimac",
-        'iti_service'=>'WIFI'
+        'iti_service'=>'Ninguno'
         ]);
-        //
+//Apurimac - Ancash
+
         DB::table('itinerarios')->insert(['iti_price'=>110
         ,'iti_terminal_llegada'=>'Terminal Terrestre Arequipa'
         ,'iti_terminal_origen'=>'Terminal Terrestre Abancay'
