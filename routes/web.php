@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\ItinerarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,7 +48,7 @@ Route::get('/fetch-price',[ItinerarioController::class,'fetchPrice']);
 Route::get('/fetch-service',[ItinerarioController::class,'fetchService']);
 Route::get('/fetch-result-terminal',[ItinerarioController::class,'fetchResultTerminal']);
 
-Route::get('Consulta', [ConsultaController::class,'Consulta']);
+Route::get('Consulta', [CarController::class,'index']);
 Route::get('verConsulta', [ItinerarioController::class,'index'])->name('showAllBus');
 Route::get('registrar',function(){
     return view('registrar');
@@ -56,3 +57,5 @@ Route::get('registrar',function(){
 Route::get('perfil',function(){
     return view('perfil');
 });
+Route::post('ResultadoConsulta', [CarController::class,'consulta_datos'])->name('result_query');
+
