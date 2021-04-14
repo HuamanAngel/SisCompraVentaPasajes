@@ -13,7 +13,11 @@
     <script src="{{ mix('js/app.js') }}" ></script>
     <script src="{{ asset('fortawesome/fontawesome-free/js/all.min.js') }}"></script>
 
+
     @yield('contenido_js')
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+    </style>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -26,7 +30,7 @@
     <link href="{{ asset('fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
     <style>
     .navbar {
-        background-color: rgba(35, 192, 35,0.9) !important;
+        background: linear-gradient(0.25turn, #3f87a6, rgba(35, 192, 35,0.9), #3f87a6) !important;
         color: white !important;
     }
 }
@@ -88,6 +92,10 @@
                     {{-- <li class="nav-item active"> <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a> </li> --}}
                     <li style="font-weight: bold" class="nav-item @if($stringRuta == 'showAllBus') active @endif"> <a class="nav-link" href="{{ route('showAllBus') }}">CONSULTA</a> </li>
                 </ul>
+                <div style="width:100%;font-size:30px;font-family: Pangolin" class="d-flex justify-content-center text-center">
+                    BUSVID-19
+
+                </div>
                 {{-- <form class="form-inline"> <input class="form-control mr-sm-2" type="text" /> <button class="btn btn-primary my-2 my-sm-0" type="submit"> Search </button> </form> --}}
                 <ul class="navbar-nav ml-md-auto">
                         @guest
@@ -123,6 +131,7 @@
                         @endguest
                 </ul>
             </div>
+
         </nav>
 
 
