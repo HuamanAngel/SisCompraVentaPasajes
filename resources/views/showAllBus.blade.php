@@ -35,7 +35,7 @@
                 <div class="mb-2 btn btn-primary col-md-12 col-6 service-option" data-option-service="1">
                     WIFI
                 </div>
-                <div class="mb-2 btn btn-primary col-md-12 col-6 service-option" data-option-service="2">
+                <div class="mb-2 btn btn-primary col-md-12 col-sm-12 col-6 service-option" data-option-service="2">
                     TV
                 </div>
                 <div class="mb-2 btn btn-primary col-md-12 col-6 service-option" data-option-service="3">
@@ -46,6 +46,19 @@
                 </div>
 
             </div>
+            <h4>Terminales de llegada</h4>
+            <div class="row p-2 m-1">
+                <div class="mb-2 btn btn-primary col-md-12 col-12 terminal-div">
+                    <input type="text" class="input-terminal" data-terminal="1" placeholder="Terminal de llegada" name="searchTerminalExit"><button class="search-button-terminal"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <h4>Terminales de salida</h4>
+            <div class="row p-2 m-1">
+                <div class="mb-2 btn btn-primary col-md-12 col-12 terminal-div" >
+                    <input type="text" class="input-terminal" data-terminal="2" placeholder="Terminal de salida" name="searchTerminalEntry"><button class="search-button-terminal"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+
         </div>
         <div class="col-lg-10 col-md-10 col-sm-10">
             <div class="d-flex justify-content-end">
@@ -158,11 +171,6 @@
 
 {{-- Ajax para servicios --}}
     <script>
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') //Obtiene el token 										csrf
-            }
-        });
         $(document).ready(function(){
             $(document).on('click','.service-option',function(event){
                 let valueOption = $(this).attr('data-option-service');
@@ -191,5 +199,62 @@
             });
         });
     </script>
+    {{-- Buscador de terminal de llegada y salida --}}
+    <script>
 
+
+
+        $(document).ready(function(){
+
+            $(document).on('click','.search-button-terminal',function(event){
+                let valueTerminal = $(this).closest('.terminal-div').find('.input-terminal').attr('data-terminal');
+                let nameTerminal = $(this).closest('.terminal-div').find('.input-terminal').val();
+                $.ajax({
+                url: "/fetch-result-terminal",
+                method:"GET",
+                data:{'optionFilter':valueTerminal,'nameFilter':nameTerminal,'valueService':valueService},
+                success: function(data) {
+                    $("#content-central-allbus").html(data);
+                    $("#content-central-allbus").removeClass('div-disabled');
+                },
+                beforeSend: function(thisXHR) {
+                    $("#content-central-allbus").addClass('div-disabled');
+                },
+                statusCode: {
+                    404: function() {
+                        alert("Error en la paginacion");
+                    }
+                },
+                error: function(jqXHR, status, error) {
+                    alert("Error al cargar tabla de productos");
+                }
+            });
+
+
+
+
+            });
+        });
+
+
+            // <div class="row p-2 m-1">
+            //     <div class="mb-2 btn btn-primary col-md-12 col-12 terminal-div">
+            //         <input type="text" class="input-terminal " data-terminal="1" placeholder="Terminal de llegada" name="searchTerminalExit"><button class="search-button-terminal"><i class="fa fa-search"></i></button>
+            //     </div>
+            // </div>
+
+            // <div class="row p-2 m-1">
+            //     <div class="mb-2 btn btn-primary col-md-12 col-12 terminal-div" >
+            //         <input type="text" class="input-terminal" data-terminal="2" placeholder="Terminal de salida" name="searchTerminalEntry"><button class="search-button-terminal"><i class="fa fa-search"></i></button>
+            //     </div>
+            // </div>
+
+
+
+
+
+
+
+
+    </script>
 @endsection

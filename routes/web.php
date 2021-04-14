@@ -41,3 +41,4 @@ Route::get('/confirmationBuy',function(){
 Route::get('/showAllBus',[ItinerarioController::class,'index'])->name('showAllBus');
 Route::get('/fetch-price',[ItinerarioController::class,'fetchPrice']);
 Route::get('/fetch-service',[ItinerarioController::class,'fetchService']);
+Route::get('/fetch-result-terminal',[ItinerarioController::class,'fetchResultTerminal']);
