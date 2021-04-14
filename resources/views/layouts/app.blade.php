@@ -30,7 +30,7 @@
     <link href="{{ asset('fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
     <style>
     .navbar {
-        background: linear-gradient(0.25turn, #3f87a6, rgba(35, 192, 35,0.9), #3f87a6) !important;
+        background: linear-gradient(0.25turn, rgba(31, 171, 31,0.9), rgba(38, 210, 38,0.9), rgba(31, 171, 31,0.9)) !important;
         color: white !important;
     }
 }
