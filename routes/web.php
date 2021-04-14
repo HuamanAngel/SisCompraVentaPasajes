@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItinerarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ConsultaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,3 +29,23 @@ Route::get('nuevo',function(){
 Route::get('template',function(){
     return view('template');
 });
+
+// Calculate Amount
+Route::get('/calculateAmount',function(){
+    return view('showAmount');
+})->name('showAmount');
+
+
+Route::get('/confirmationBuy',function(){
+    return view('confirmationBuy');
+})->name('confirmationBuy');
+
+// Route::resource('user', [UserController::class]);
+
+// Route::get('/showAllBus',[ItinerarioController::class,'index'])->name('showAllBus');
+Route::get('/fetch-price',[ItinerarioController::class,'fetchPrice']);
+Route::get('/fetch-service',[ItinerarioController::class,'fetchService']);
+Route::get('/fetch-result-terminal',[ItinerarioController::class,'fetchResultTerminal']);
+
+Route::get('Consulta', [ConsultaController::class,'Consulta']);
+Route::get('verConsulta', [ItinerarioController::class,'index'])->name('showAllBus');

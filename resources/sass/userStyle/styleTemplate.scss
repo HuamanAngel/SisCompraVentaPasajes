@@ -1,0 +1,11 @@
+@import '../variables';
+
+
+.content-main-layout{
+    background-color: $color-background;
+}
+
+.separatorLine{
+    border-color: $colorCardBorder;
+    border-width: 3px;
+}

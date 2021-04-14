@@ -1,0 +1,21 @@
+@import '../variables';
+
+@mixin cardContainerNow {
+    border-color: $colorCardBorder;
+    border-width: 3px;
+    border-style: solid;
+    background-color: $colorCardBackground;
+    font-family: $font-family-sans-serif;    
+}
+
+.cardContainer1{
+    @include cardContainerNow;
+}
+
+.buttonAmount{
+    font-weight: bold;
+    border-width: 0px 1px 1px 0px;
+}
+.buttonAmountHidden{
+    visibility: hidden;
+}
