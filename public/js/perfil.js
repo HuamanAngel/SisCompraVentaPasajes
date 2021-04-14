@@ -1,7 +1,7 @@
 $(document).ready(function(){
-    $('.button-left').click(function(){
-        $('.sidebar').toggleClass('fliph');
+    $('[data-toggle="offcanvas"]').click(function(){
+        $("#navigation").toggleClass("hidden-xs");
     });
-      
  });
+
  

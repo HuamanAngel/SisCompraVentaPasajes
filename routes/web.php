@@ -59,3 +59,7 @@ Route::get('perfil',function(){
 });
 Route::post('ResultadoConsulta', [CarController::class,'consulta_datos'])->name('result_query');
 
+
+Route::get('perfil2',function(){
+    return view('perfil2');
+});
