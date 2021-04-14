@@ -25,29 +25,29 @@
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Nombres *" value="" />
+                                            <input type="text" class="form-control" name="firstname" placeholder="Nombres *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Apellidos *" value="" />
+                                            <input type="text" class="form-control" name="lastname" placeholder="Apellidos *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="DNI *" value="" />
+                                            <input type="text" class="form-control" name="dni" placeholder="DNI *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Nombre de Usuario*" value="" />
+                                            <input type="text" class="form-control" name="user" placeholder="Nombre de Usuario*" value="" />
                                         </div>
                                         <div class="form-group">
                                             <div class="maxl">
                                                 <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="masculino" checked>
+                                                    <input type="radio" name="gender" value="Masculino" checked>
                                                     <span> Masculino </span> 
                                                 </label>
                                                 <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="femenino">
+                                                    <input type="radio" name="gender" value="Femenino">
                                                     <span>Femenino </span> 
                                                 </label>
                                                 <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="">
+                                                    <input type="radio" name="gender" value="No Especificado">
                                                     <span>No deseo contestar </span> 
                                                 </label>
                                             </div>
