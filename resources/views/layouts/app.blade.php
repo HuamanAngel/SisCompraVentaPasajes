@@ -43,8 +43,8 @@
 
 
     .active {
-    background-color: green;
-    color: white !important
+    background-color: rgba(195, 195, 195, 0.8);
+    color: black !important
 }
 
 
@@ -92,7 +92,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="navbar-nav">
                     {{-- <li class="nav-item active"> <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a> </li> --}}
-                    <li style="font-weight: bold" class="nav-item @if($stringRuta == 'executeQuery' || $stringRuta == 'showAllBus'  || $stringRuta='ResultadoConsulta' ) active @endif"> <a class="nav-link" href="{{ route('executeQuery') }}">CONSULTA</a> </li>
+                    <li style="font-weight: bold" class="nav-item @if($stringRuta == 'executeQuery' || $stringRuta == 'showAllBus'  || $stringRuta=='result_query' ) active @endif"> <a class="nav-link" href="{{ route('executeQuery') }}">CONSULTA</a> </li>
                 </ul>
                 <div style="width:100%;font-size:30px;font-family: Pangolin" class="d-flex justify-content-center text-center">
                     BUSVID-19

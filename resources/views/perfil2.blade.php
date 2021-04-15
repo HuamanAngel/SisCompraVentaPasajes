@@ -6,20 +6,30 @@
 
 @section('contenido_cSS')
 <link href="{{ asset('css/perfil2.css') }}" rel="stylesheet">
+
+
+
 @endsection
 
 @section('content')
 
-<body>
+
     <div class="main-container">
         <div class="m-4 d-flex">
             <div id="sidebar-container" class="bg-primary">
+
+
+
                 <div class="logo">
-                    <h4 class="text-light font-weight-bold">Busvid 19</h4>
+                    <h4 class="text-light font-weight-bold text-center">Busvid19</h4>
                 </div>
-                <div class="menu">
+                <div class="menu" >
+
+                    <hr style="border-color: white">
                     <a href="#" class="d-block text-light p-3"><ion-icon name="person" class="mr-2 lead"></ion-icon>Mis Datos</a>
+                    <hr style="border-color: white">
                     <a href="#" class="d-block text-light p-3"><ion-icon name="clipboard" class="mr-2 lead"></ion-icon>Mis pasajes</a>
+                    <hr style="border-color: white">
                     {{-- <a href="#" class="d-block text-light p-3"><ion-icon name="construct" class="mr-2 lead"></ion-icon>configuracion</a> --}}
                 </div>
             </div> 
@@ -204,9 +214,6 @@
 
     </div>
 
-
-
-</body>
 @endsection
 
 @section('contenido_abajo_js')
@@ -215,7 +222,7 @@
 @if (session('updateSuccess'))
     <script>
         Swal.fire({
-            title: "Categoria fue actualizado correctamente",
+            title: "Los datos fueron actualizados correctamente",
             text:  "{{session('updateSuccess')}}",
             icon: "success"
         });
