@@ -64,5 +64,18 @@ Route::post('ResultadoConsulta', [ItinerarioController::class,'consulta_datos'])
 
 
 
+Route::get('verConsulta', [ConsultaController::class,'verConsulta']);
+
+Route::get('RegistrarCliente',function(){
+    return view('CrearCliente');
+});
+
+Route::get('ModificarCliente',function(){
+    return view('ModificarCliente');
+});
+
+Route::get('EliminarCliente',function(){
+    return view('EliminarCliente');
+});
 Route::get('perfil2',[UserController::class,'index'])->name('perfilUserNow');
 Route::post('perfil2',[UserController::class,'editUser'])->name('perfilEditNow');
