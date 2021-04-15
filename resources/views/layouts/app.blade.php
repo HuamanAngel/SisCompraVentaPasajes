@@ -13,7 +13,11 @@
     <script src="{{ mix('js/app.js') }}" ></script>
     <script src="{{ asset('fortawesome/fontawesome-free/js/all.min.js') }}"></script>
 
+
     @yield('contenido_js')
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+    </style>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,12 +28,124 @@
     <link href="{{ asset('css/styleTemplate.css') }}" rel="stylesheet">
     <link href="{{ asset('fonts/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
-    @yield('contenido_cSS')
+    <style>
+    .navbar {
+        /* background: linear-gradient(0.25turn, rgba(31, 171, 31,0.9), rgba(38, 210, 38,0.9), rgba(31, 171, 31,0.9)) !important; */
+        /* background-color: rgba(0, 0, 0, 0.7) !important;  */
+        background: radial-gradient(circle at 50% -20.71%, #b7f4ff 0, #6c90d8 0%, #2c3750 100%);
+        color: white !important;
+    }
+}
+
+.bg-black {
+    background-color: #000
+}
+
+
+    .active {
+    background-color: green;
+    color: white !important
+}
+
+
+.nav-link {
+    color: inherit !important
+}
+
+.nav-item {
+    padding: 10px 20px;
+    color: #fff
+}
+
+.nav-item:hover {
+    background-color: #fff;
+    color: #000 !important
+}
+
+.right {
+    margin-left: auto
+}
+
+.navbar-collapse.collapse.in {
+    display: block !important
+}
+
+@media (max-width: 992px) {
+    .right {
+        margin-left: 0
+    }
+}
+    </style>
+@yield('contenido_cSS')
 
 </head> 
 <body>
+
+    @php
+        $stringRuta = \Request::route()->getName();
+    @endphp
+
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="navbar-toggler-icon"></span> </button> <a class="navbar-brand" href="{{ url('/') }}">
+            <img src="{{ asset('asset/logo-busvid19.png') }}" width="50px"  alt=""></a>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="navbar-nav">
+                    {{-- <li class="nav-item active"> <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a> </li> --}}
+                    <li style="font-weight: bold" class="nav-item @if($stringRuta == 'executeQuery' || $stringRuta == 'showAllBus'  || $stringRuta='ResultadoConsulta' ) active @endif"> <a class="nav-link" href="{{ route('executeQuery') }}">CONSULTA</a> </li>
+                </ul>
+                <div style="width:100%;font-size:30px;font-family: Pangolin" class="d-flex justify-content-center text-center">
+                    BUSVID-19
+
+                </div>
+                {{-- <form class="form-inline"> <input class="form-control mr-sm-2" type="text" /> <button class="btn btn-primary my-2 my-sm-0" type="submit"> Search </button> </form> --}}
+                <ul class="navbar-nav ml-md-auto">
+                        @guest
+                            @if (Route::has('login'))
+                                <li style="font-weight: bold "class="nav-item @if($stringRuta == 'login') active @endif">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
+                                </li>
+                            @endif
+                            
+                            @if (Route::has('register'))
+                                <li style="font-weight: bold" class="nav-item @if($stringRuta == 'register') active @endif">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTRO') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->use_name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                    <a class="dropdown-item" href="{{ route('perfilUserNow') }}">
+                                        Mi Perfil
+                                    </a>
+
+                                </div>
+                            </li>
+                        @endguest
+                </ul>
+            </div>
+
+        </nav>
+
+
+
+        {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+
+
+
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -81,9 +197,11 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> --}}
 
         <main class="py-4 content-main-layout">
+            <br>
+            <br>
             @yield('content')
         </main>
     </div>

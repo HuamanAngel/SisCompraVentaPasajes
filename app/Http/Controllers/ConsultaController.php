@@ -12,8 +12,6 @@ class ConsultaController extends Controller
     }
 
     public function verConsulta(){
-        return view('verConsulta');
+        return view('VerConsulta');
     }
-    
-
 }

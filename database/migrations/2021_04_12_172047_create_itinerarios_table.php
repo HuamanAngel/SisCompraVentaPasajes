@@ -16,9 +16,13 @@ class CreateItinerariosTable extends Migration
         Schema::create('itinerarios', function (Blueprint $table) {
             $table->id();
             $table->double('iti_price',6,2)->unsigned();
+            $table->string('iti_terminal_llegada');
+            $table->string('iti_terminal_origen');
             $table->dateTime('iti_salida');
             $table->boolean('iti_isAvailable')->default(false);
             $table->integer('iti_quantitySeat')->nullable(0);
+            $table->string('iti_depa_origen');
+            $table->string('iti_depa_llegada');
             $table->enum('iti_service',['Ninguno','WIFI','TV','Baño'])->default('Ninguno');
             $table->timestamps();
         });
