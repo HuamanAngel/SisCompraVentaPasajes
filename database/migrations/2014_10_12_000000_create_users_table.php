@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('use_name');
             $table->string('use_apellido');
+            $table->boolean('isAdmin')->default(false);
             $table->string('use_dni');
             $table->string('user');
             $table->string('email');
