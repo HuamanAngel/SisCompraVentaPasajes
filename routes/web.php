@@ -46,3 +46,15 @@ Route::get('/fetch-service',[ItinerarioController::class,'fetchService']);
 Route::get('Consulta', [ConsultaController::class,'Consulta']);
 
 Route::get('verConsulta', [ConsultaController::class,'verConsulta']);
+
+Route::get('RegistrarCliente',function(){
+    return view('CrearCliente');
+});
+
+Route::get('ModificarCliente',function(){
+    return view('ModificarCliente');
+});
+
+Route::get('EliminarCliente',function(){
+    return view('EliminarCliente');
+});
