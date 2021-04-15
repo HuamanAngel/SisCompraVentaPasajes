@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ConsultaController;
-
+use App\Http\Controllers\UserAdmin;
 
 Route::get('/', function () {
     return view('welcome');
@@ -66,16 +66,24 @@ Route::post('ResultadoConsulta', [ItinerarioController::class,'consulta_datos'])
 
 Route::get('verConsulta', [ConsultaController::class,'verConsulta']);
 
-Route::get('RegistrarCliente',function(){
-    return view('CrearCliente');
-});
+// Route::get('RegistrarCliente',function(){
+//     return view('CrearCliente');
+// })->name('createClient');
 
-Route::get('ModificarCliente',function(){
-    return view('ModificarCliente');
-});
+// Route::get('ModificarCliente',function(){
+//     return view('ModificarCliente');
+// });
 
-Route::get('EliminarCliente',function(){
-    return view('EliminarCliente');
-});
+// Route::get('EliminarCliente',function(){
+//     return view('EliminarCliente');
+// });
+
 Route::get('perfil2',[UserController::class,'index'])->name('perfilUserNow');
 Route::post('perfil2',[UserController::class,'editUser'])->name('perfilEditNow');
+
+
+Route::group(['middleware' => 'admin'], function () {
+    Route::resource('userAdminClient', UserAdmin::class);
+    Route::get('userAdminClient/edit/per',[UserAdmin::class,'edit'])->name('userAdminClient.edit.personalize');
+    Route::get('userAdminClient/delete/per',[UserAdmin::class,'delete'])->name('userAdminClient.delete.personalize');    
+});
