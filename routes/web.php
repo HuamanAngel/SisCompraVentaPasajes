@@ -62,6 +62,8 @@ Route::post('ResultadoConsulta', [ItinerarioController::class,'consulta_datos'])
 Route::get('verConsulta', [ConsultaController::class,'verConsulta']);
 Route::get('perfil2',[UserController::class,'index'])->name('perfilUserNow');
 Route::post('perfil2',[UserController::class,'editUser'])->name('perfilEditNow');
+Route::get('perfil2/misPasajes',[UserController::class,'misPasajes'])->name('misPasajes');
+
 
 Route::post('paymentMethod',[PaymentController::class,'paymentExecute'])->name('paymentMethod')->middleware('auth');
 

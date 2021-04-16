@@ -37,4 +37,8 @@ class UserController extends Controller
             ]);
         return back()->with('updateSuccess',"Actualizado correctamente");
     }
+
+    public function misPasajes(){
+        return view('misPasajes');
+    }
 }

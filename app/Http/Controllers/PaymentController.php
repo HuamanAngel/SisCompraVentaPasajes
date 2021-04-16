@@ -15,8 +15,9 @@ class PaymentController extends Controller
 
     public function index($id){
         $dataBus = Itinerario::findOrFail($id);
-
-        return view('showAmount',compact('dataBus'));
+        $todosAsientos = Pasaje::where('iti_id',$id)->get('pas_numero_asiento');
+        // dd($todosAsientos);
+        return view('showAmount',compact('dataBus','todosAsientos'));
     }
     public function paymentExecute(Request $request){
 

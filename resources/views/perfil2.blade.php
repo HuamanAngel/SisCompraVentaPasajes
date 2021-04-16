@@ -26,9 +26,9 @@
                 <div class="menu" >
 
                     <hr style="border-color: white">
-                    <a href="#" class="d-block text-light p-3"><ion-icon name="person" class="mr-2 lead"></ion-icon>Mis Datos</a>
+                    <a href="{{ route('perfilUserNow') }}" class="d-block text-light p-3 active"><ion-icon name="person" class="mr-2 lead"></ion-icon>Mis Datos</a>
                     <hr style="border-color: white">
-                    <a href="#" class="d-block text-light p-3"><ion-icon name="clipboard" class="mr-2 lead"></ion-icon>Mis pasajes</a>
+                    <a href="{{ route('misPasajes') }}" class="d-block text-light p-3 "><ion-icon name="clipboard" class="mr-2 lead"></ion-icon>Mis pasajes</a>
                     <hr style="border-color: white">
                     {{-- <a href="#" class="d-block text-light p-3"><ion-icon name="construct" class="mr-2 lead"></ion-icon>configuracion</a> --}}
                 </div>

@@ -22,5 +22,7 @@ class Compra extends Model
         'com_fecha_compra' => 'datetime',
     ];
 
-
+    public function compraPasaje(){
+        return $this->belongsTo(Pasaje::class,'pas_id');
+    }
 }

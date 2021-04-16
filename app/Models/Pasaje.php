@@ -22,4 +22,8 @@ class Pasaje extends Model
         'pas_fecha_pasaje' => 'datetime',
     ];
 
+    public function pasIti(){
+        return $this->belongsTo(Itinerario::class,'iti_id');
+    }
+
 }
