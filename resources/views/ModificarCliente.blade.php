@@ -249,7 +249,13 @@
                     'email':valueEmaJs},
                     success: function(data) {
                       if(data.error == 1){
-                        alert(data.errorInfo);
+                          Swal.fire({
+                              title: "No se pudo actualizar",
+                              html:  `
+                              `+data.errorInfo+``,
+                              icon: "error"
+                          });
+
                         classTrNow.removeClass('div-disabled');
 
                       }else{
@@ -259,7 +265,6 @@
                         valueTableSex.text(data.sexo);
                         valueTableTel.text(data.tel);
                         valueTableEma.text(data.email);
-                        // alert(data.tel);
                         classTrNow.removeClass('div-disabled');
                       }
                     },
