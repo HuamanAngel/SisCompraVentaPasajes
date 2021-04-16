@@ -205,7 +205,7 @@
             </div>
         </nav> --}}
 
-        <main class="py-4 content-main-layout">
+        <main class="py-4 ">
             <br>
             <br>
             @yield('content')

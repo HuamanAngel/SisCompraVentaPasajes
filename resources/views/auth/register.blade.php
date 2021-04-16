@@ -14,6 +14,7 @@
 @section('content')
 
 
+<div class="content-main-layout">
 
 <div class="container register">
     <div class="row">

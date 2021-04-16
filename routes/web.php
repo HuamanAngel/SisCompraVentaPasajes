@@ -74,3 +74,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/fetch-dni',[UserAdmin::class,'fetch_dni']);    
     Route::put('/fetch-data-all',[UserAdmin::class,'update']);    
 });
+
+Route::get('login1',function(){
+    return view('login1');
+});
