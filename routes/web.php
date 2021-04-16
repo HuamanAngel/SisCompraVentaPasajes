@@ -38,3 +38,7 @@ Route::get('perfil',function(){
 Route::get('perfil2',function(){
     return view('perfil2');
 });
+
+Route::get('login1',function(){
+    return view('login1');
+});
