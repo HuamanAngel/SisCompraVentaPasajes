@@ -125,10 +125,10 @@
 
       <nav class="nav-menu">
         <ul>
-          <li class="active"><a href="{{ route('userAdminClient.create') }}"><i class="bx bx-user"></i> <span>Registrar Clientes</span></a></li>
-          <li ><a href="{{ route('userAdminClient.edit.personalize') }}"><i class="bx bx-file-blank"></i> <span>Modificar Clientes</span></a></li>
-          <li><a href="{{ route('userAdminClient.delete.personalize') }}"><i class="bx bx-server"></i> Eliminar Clientes</a></li>
-          <li><a href="{{ route('home') }}"><i class="bx bx-server"></i> Ir a la pagina</a></li>
+          <li class="@if($stringRuta == 'userAdminClient.create' || $stringRuta =='userAdminClient.store') active @endif"><a href="{{ route('userAdminClient.create') }}"><i class="bx bx-user"></i> <span>Registrar Clientes</span></a></li>
+          <li class="@if($stringRuta == 'userAdminClient.edit.personalize') active @endif"><a href="{{ route('userAdminClient.edit.personalize') }}"><i class="bx bx-file-blank"></i> <span>Modificar Clientes</span></a></li>
+          {{-- <li class="@if($stringRuta == 'userAdminClient.delete.personalize') active @endif"><a href="{{ route('userAdminClient.delete.personalize') }}"><i class="bx bx-server"></i> Eliminar Clientes</a></li> --}}
+          <li><a href="{{ route('welcome') }}"><i class="bx bx-server"></i> Ir a la pagina</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->

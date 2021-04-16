@@ -16,6 +16,16 @@
 
   <!-- Template Main CSS File -->
   <link href="{{ asset('css/styleClientes.css') }} " rel="stylesheet">
+  <style>
+    .div-disabled {
+        pointer-events: none;
+        opacity: 0.4;
+    }
+    .button-hidden{
+      display: none;
+    }
+
+</style>
 
 @endsection
 
@@ -35,127 +45,17 @@
                 <p>Ingresar el DNI</p>
             </div>
             <div class="input-group  col-md-3">
-              <input type="text" class="form-control">
+              <input type="number" placeholder="Inserte numero de DNI" class="form-control search-dni-class">
               <div class="">
-                  <button class="btn btn-danger" type="button" id=""><i class="fas fa-search"></i></button>
+                  <button class="btn btn-danger btn-search-client" type="button" id=""><i class="fas fa-search"></i></button>
               </div>
           </div>
         </div>
         <div class="row" >
-            <div class="col-lg-11 align-items-stretch">
-              <form action="" method="post" role="form" class="registro-form">
-                <table class="table">
-                  <thead class="thead-dark">
-                    <tr>
-                      <th scope="col">DNI</th>
-                      <th scope="col">Apellidos</th>
-                      <th scope="col">Nombres</th>
-                      <th scope="col">Sexo</th>
-                      <th scope="col">Edad</th>
-                      <th scope="col">Acciones</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">78787845</th>
-                      <td>Palomino Galvez</td>
-                      <td>Farik</td>
-                      <td>M</td>
-                      <td>20</td>
-                      <td><button class="m-0" type="submit">Editar</button></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">78787845</th>
-                      <td>Palomino Galvez</td>
-                      <td>Farik</td>
-                      <td>M</td>
-                      <td>20</td>
-                      <td><button class="m-0" type="submit">Editar</button></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">78787845</th>
-                      <td>Palomino Galvez</td>
-                      <td>Farik</td>
-                      <td>M</td>
-                      <td>20</td>
-                      <td><button class="m-0" type="submit">Editar</button></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">78787845</th>
-                      <td>Palomino Galvez</td>
-                      <td>Farik</td>
-                      <td>M</td>
-                      <td>20</td>
-                      <td><button class="m-0" type="submit">Editar</button></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">78787845</th>
-                      <td>Palomino Galvez</td>
-                      <td>Farik</td>
-                      <td>M</td>
-                      <td>20</td>
-                      <td><button class="m-0" type="submit">Editar</button></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">78787845</th>
-                      <td>Palomino Galvez</td>
-                      <td>Farik</td>
-                      <td>M</td>
-                      <td>20</td>
-                      <td><button class="m-0" type="submit">Editar</button></td>
-                    </tr>
-                    
-                  </tbody>
-                </table>
-                 
-              <div class="row mt-5 mt-lg-0 mt-5">
-                <div class="text-center col-md-6 btn-red"><button type="submit">Cancelar</button></div>
-                <div class="text-center col-md-6"><button  type="submit">Actualizar Registro</button></div>
-              </div>  
-            </div>
-              <!--<hr></br></br></br></br>
-              <div class="">
-                <h2>Actualizar Datos</h2>
-              </div><hr>
-              <div class="row" >
-              <div class="col-lg-11 align-items-stretch">
-                <form action="" method="post" role="form" class="registro-form">
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="name">Nombres</label>
-                      <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                      <div class="validate"></div>
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="name">Apellidos</label>
-                      <input type="text" name="lastName" class="form-control" id="lastName" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                      <div class="validate"></div>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="name">DNI</label>
-                    <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                    <div class="validate"></div>
-                  </div>
-                  <div class="form-group">
-                      <label for="name">Sexo</label>
-                      <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                      <div class="validate"></div>
-                  </div>
-                  <div class="form-group">
-                      <label for="name">Edad</label>
-                      <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                      <div class="validate"></div>
-                  </div>
-                  <div class="row mt-5 mt-lg-0 mt-5">
-                      <div class="text-center col-md-6 btn-red"><button type="submit">Cancelar</button></div>
-                      <div class="text-center col-md-6"><button  type="submit">Modificar Registro</button></div>
-                      
-                  </div>
-                </form>
-              </div>
-            </div>-->
-             
+            <div class="col-lg-11 align-items-stretch" id="content-central-dni">
+                    @include('partials/clientContentModi')
+
+            </div>             
           </div>
       </div>
     </section><!-- End Modificar Section -->
@@ -166,9 +66,251 @@
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 
-<!-- Vendor JS Files -->
+
+{{-- Ajax para search --}}
+
+<script>
+  $.ajaxSetup({
+    headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') //Obtiene el token 										csrf
+      }
+  });
+
+  $(document).ready(function(){
+      $(document).on('keyup','.search-dni-class',function(event){
+          let valueDniSearch = $('.search-dni-class').val();
+          $.ajax({
+              url: "/fetch-dni",
+              method:"GET",
+              data:{'numberDni':valueDniSearch},
+              success: function(data) {
+                  $("#content-central-dni").html(data);
+                  $("#content-central-dni").removeClass('div-disabled');
+
+              },
+              beforeSend: function(thisXHR) {
+                  $("#content-central-dni").addClass('div-disabled');
+              },
+              statusCode: {
+                  404: function() {
+                      alert("Error en la paginacion");
+                  }
+              },
+              error: function(jqXHR, status, error) {
+                  alert("Error al cargar tabla de productos");
+              }
+          });
+      });
+
+
+
+
+      $(document).on('click','.btn-search-client',function(event){
+          let valueDniSearch = $('.search-dni-class').val();
+          $.ajax({
+              url: "/fetch-dni",
+              method:"GET",
+              data:{'numberDni':valueDniSearch},
+              success: function(data) {
+                  $("#content-central-dni").html(data);
+                  $("#content-central-dni").removeClass('div-disabled');
+
+              },
+              beforeSend: function(thisXHR) {
+                  $("#content-central-dni").addClass('div-disabled');
+              },
+              statusCode: {
+                  404: function() {
+                      alert("Error en la paginacion");
+                  }
+              },
+              error: function(jqXHR, status, error) {
+                  alert("Error al cargar tabla de productos");
+              }
+          });
+      });
+
+  });
+</script>
+
 
 <!-- Template Main JS File -->
 <script src="{{ asset('js/funcClientes.js') }} "></script>
+
+
+@if (session('userDniDelete'))
+    <script>
+        Swal.fire({
+            title: "Categoria fue borrada correctamente",
+            text:  "{{session('userDniDelete')}}",
+            icon: "success"
+        });
+    </script>
+@endif
+
+
+
+
+
+  {{-- Cambia de texto el boton --}}
+  {{--  0 : Para cambiar a actualizar
+        1 : Para cambiar a editar--}}
+        <script>
+          $(document).on('click','.btn-submit-edit-client',function(event){
+              if($(this).attr('data-button-edit')==0){
+      
+                  $(this).removeClass('btn-success').addClass('btn-info');
+                  $(this).text('Actualizar');
+                  $(this).attr('data-button-edit',1);
+                  $(this).closest('.action-user').find('.btn-cancel-edit').removeClass('button-hidden');
+      
+                  // Mostrar input
+      
+                  $(this).closest('.trClientRegister').find('.inputDni').attr('type','number');            
+                  $(this).closest('.trClientRegister').find('.classDni').addClass('button-hidden');            
+      
+                  $(this).closest('.trClientRegister').find('.inputApellido').attr('type','text');            
+                  $(this).closest('.trClientRegister').find('.classApellido').addClass('button-hidden');            
+
+                  $(this).closest('.trClientRegister').find('.inputName').attr('type','text');            
+                  $(this).closest('.trClientRegister').find('.className').addClass('button-hidden');            
+
+                  $(this).closest('.trClientRegister').find('.inputSexo').removeClass('button-hidden');            
+                  $(this).closest('.trClientRegister').find('.classSexo').addClass('button-hidden');            
+
+                  $(this).closest('.trClientRegister').find('.inputTel').attr('type','number');            
+                  $(this).closest('.trClientRegister').find('.classTel').addClass('button-hidden');            
+
+                  $(this).closest('.trClientRegister').find('.inputEmail').attr('type','email');            
+                  $(this).closest('.trClientRegister').find('.classEmail').addClass('button-hidden');            
+
+      
+              }else if($(this).attr('data-button-edit')==1){
+                  let valueIdJs = $(this).closest('.trClientRegister').find('.idUser').val();
+                  let valueDnoJs = $(this).closest('.trClientRegister').find('.inputDni').val();
+                  let valueApeJs = $(this).closest('.trClientRegister').find('.inputApellido').val();
+                  let valueNamJs = $(this).closest('.trClientRegister').find('.inputName').val();
+                  let valueSexJs = $(this).closest('.trClientRegister').find('.inputSexo').val();
+                  let valueTelJs = $(this).closest('.trClientRegister').find('.inputTel').val();
+                  let valueEmaJs = $(this).closest('.trClientRegister').find('.inputEmail').val();
+
+                                   
+                  //Datos de la tabla 
+                  let  valueTableDni = $(this).closest('.trClientRegister').find('.classDni');
+                  let  valueTableApe = $(this).closest('.trClientRegister').find('.classApellido');
+                  let  valueTableNam = $(this).closest('.trClientRegister').find('.className');
+                  let  valueTableSex = $(this).closest('.trClientRegister').find('.classSexo');
+
+                  // $('select[name="lineas"] option:selected').text())
+
+                  let  valueTableTel = $(this).closest('.trClientRegister').find('.classTel');
+                  let  valueTableEma = $(this).closest('.trClientRegister').find('.classEmail');
+
+
+
+                  // Esconde boton
+                  $(this).removeClass('btn-info').addClass('btn-success');
+                  $(this).text('Editar');
+                  $(this).attr('data-button-edit',0);
+                  $(this).closest('.action-user').find('.btn-cancel-edit').addClass('button-hidden');
+      
+      
+                  // No mostrar input
+                  $(this).closest('.trClientRegister').find('.inputDni').attr('type','hidden');            
+                  $(this).closest('.trClientRegister').find('.classDni').removeClass('button-hidden');
+      
+      
+                  $(this).closest('.trClientRegister').find('.inputApellido').attr('type','hidden');            
+                  $(this).closest('.trClientRegister').find('.classApellido').removeClass('button-hidden');            
+      
+                  $(this).closest('.trClientRegister').find('.inputName').attr('type','hidden');            
+                  $(this).closest('.trClientRegister').find('.className').removeClass('button-hidden');            
+
+                  $(this).closest('.trClientRegister').find('.inputSexo').addClass('button-hidden');            
+                  $(this).closest('.trClientRegister').find('.classSexo').removeClass('button-hidden');            
+
+                  $(this).closest('.trClientRegister').find('.inputTel').attr('type','hidden');            
+                  $(this).closest('.trClientRegister').find('.classTel').removeClass('button-hidden');            
+
+                  $(this).closest('.trClientRegister').find('.inputEmail').attr('type','hidden');            
+                  $(this).closest('.trClientRegister').find('.classEmail').removeClass('button-hidden');      
+                  
+                  // Colocar ajax
+                let classTrNow = $(this).closest('.trClientRegister');
+                $.ajax({
+                    url: "/fetch-data-all",
+                    method:"PUT",
+                    data:{'dni':valueDnoJs,
+                    'id':valueIdJs,
+                    'lastname':valueApeJs,
+                    'name':valueNamJs,
+                    'sexo':valueSexJs,
+                    'tel':valueTelJs,
+                    'email':valueEmaJs},
+                    success: function(data) {
+                      if(data.error == 1){
+                        alert(data.errorInfo);
+                        classTrNow.removeClass('div-disabled');
+
+                      }else{
+                        valueTableDni.text(data.dni);
+                        valueTableApe.text(data.lastname);
+                        valueTableNam.text(data.name);
+                        valueTableSex.text(data.sexo);
+                        valueTableTel.text(data.tel);
+                        valueTableEma.text(data.email);
+                        // alert(data.tel);
+                        classTrNow.removeClass('div-disabled');
+                      }
+                    },
+                    beforeSend: function(thisXHR) {
+                      classTrNow.addClass('div-disabled');
+                    },
+                    statusCode: {
+                        404: function() {
+                            alert("Error en la paginacion");
+                        }
+                    },
+                    error: function(jqXHR, status, error) {
+                        alert("Error al cargar tabla de productos");
+                    }
+                });            
+              }
+          });
+      
+          // Cancela edicion
+          $(document).on('click','.btn-cancel-edit',function(event){
+              $(this).closest('.action-user').find('.btn-submit-edit-client').removeClass('btn-info').addClass('btn-success');
+              $(this).closest('.action-user').find('.btn-submit-edit-client').text('Editar');
+              $(this).closest('.action-user').find('.btn-submit-edit-client').attr('data-button-edit',0);
+              $(this).addClass('button-hidden');
+      
+              // No mostrar input
+              $(this).closest('.trClientRegister').find('.inputDni').attr('type','hidden');            
+              $(this).closest('.trClientRegister').find('.classDni').removeClass('button-hidden');            
+      
+              $(this).closest('.trClientRegister').find('.inputApellido').attr('type','hidden');            
+              $(this).closest('.trClientRegister').find('.classApellido').removeClass('button-hidden');            
+      
+              $(this).closest('.trClientRegister').find('.inputName').attr('type','hidden');            
+              $(this).closest('.trClientRegister').find('.className').removeClass('button-hidden');            
+
+              $(this).closest('.trClientRegister').find('.inputSexo').addClass('button-hidden');            
+              $(this).closest('.trClientRegister').find('.classSexo').removeClass('button-hidden');            
+
+              $(this).closest('.trClientRegister').find('.inputTel').attr('type','hidden');            
+              $(this).closest('.trClientRegister').find('.classTel').removeClass('button-hidden');            
+
+              $(this).closest('.trClientRegister').find('.inputEmail').attr('type','hidden');            
+              $(this).closest('.trClientRegister').find('.classEmail').removeClass('button-hidden');     
+
+      
+          });
+        </script>
+      
+
+
+
+
 
 @endsection

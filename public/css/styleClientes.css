@@ -403,7 +403,7 @@ section {
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
 }
 
-button[type="submit"] {
+/* button[type="submit"] {
   background:  #1da018;
   border: 0;
   padding: 10px 24px;
@@ -411,7 +411,7 @@ button[type="submit"] {
   transition: 0.4s;
   margin-top: 30px;
   border-radius: 4px;
-}
+} */
 .btn-red button {
   background: #dd1414;
 }

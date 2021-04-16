@@ -21,7 +21,7 @@ use App\Http\Controllers\UserAdmin;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 
@@ -86,4 +86,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::resource('userAdminClient', UserAdmin::class);
     Route::get('userAdminClient/edit/per',[UserAdmin::class,'edit'])->name('userAdminClient.edit.personalize');
     Route::get('userAdminClient/delete/per',[UserAdmin::class,'delete'])->name('userAdminClient.delete.personalize');    
+    Route::get('/fetch-dni',[UserAdmin::class,'fetch_dni']);    
+    Route::put('/fetch-data-all',[UserAdmin::class,'update']);    
+
+    
 });

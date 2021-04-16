@@ -131,7 +131,13 @@
                                     <a class="dropdown-item" href="{{ route('perfilUserNow') }}">
                                         Mi Perfil
                                     </a>
-
+                                    @if(Auth::user()->isAdmin==1)
+                                        <a class="dropdown-item" href="{{ route('userAdminClient.create') }}">
+                                            Administracion
+                                        </a>                                            
+                                    @else
+                                        
+                                    @endif
                                 </div>
                             </li>
                         @endguest
