@@ -76,7 +76,7 @@
     </style>
 @yield('contenido_cSS')
 
-</head> 
+</head>
 <body>
 
     @php
@@ -101,10 +101,10 @@
                         @guest
                             @if (Route::has('login'))
                                 <li style="font-weight: bold "class="nav-item @if($stringRuta == 'login') active @endif">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('INICIO') }}</a>
                                 </li>
                             @endif
-                            
+
                             @if (Route::has('register'))
                                 <li style="font-weight: bold" class="nav-item @if($stringRuta == 'register') active @endif">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTRO') }}</a>
@@ -120,7 +120,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Salir') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -163,7 +163,7 @@
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-                            
+
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -202,5 +202,5 @@
     @yield('contenido_abajo_js')
 
 </body>
-    
+
 </html>
