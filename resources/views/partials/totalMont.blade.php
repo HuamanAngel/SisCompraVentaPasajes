@@ -52,7 +52,7 @@
         <input type="hidden" name="costoUbicacion" class="inputUbicacion" value="">
         <input type="hidden" name="costoTotal" class="inputTotal" value="">
         <div class="pb-2 d-flex justify-content-center">
-            <button type="submit" class="btn btn-info text-white" style="font-weight: bold">Comprar pasaje</button>
-        </div>
+		<input type="submit" value="Comprar" class="btn float-right login_btn">
+		</div>
     </form>
 </div>
