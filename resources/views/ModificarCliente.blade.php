@@ -141,7 +141,7 @@
 @if (session('userDniDelete'))
     <script>
         Swal.fire({
-            title: "Categoria fue borrada correctamente",
+            title: "El usuario fue borrado correctamente",
             text:  "{{session('userDniDelete')}}",
             icon: "success"
         });

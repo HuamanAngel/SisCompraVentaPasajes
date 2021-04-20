@@ -104,8 +104,8 @@
 
 
                 <div class="row mt-5 mt-lg-0 mt-5">
-                    <div class="text-center col-md-6 btn-red"><button type="submit">Cancelar</button></div>
-                    <div class="text-center col-md-6"><button  type="submit">Guardar Registro</button></div>
+                    <div class="text-center col-md-6 btn-red"><button class="btn btn-danger" type="submit">Cancelar</button></div>
+                    <div class="text-center col-md-6"><button class="btn btn-success"  type="submit">Guardar Registro</button></div>
                     
                 </div>
               </form>
