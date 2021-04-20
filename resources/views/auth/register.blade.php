@@ -14,6 +14,7 @@
 @section('content')
 
 
+<div class="content-main-layout">
 
 <div class="container register">
     <div class="row">
@@ -27,7 +28,7 @@
             
             <div class="tab-content" id="myTabContent" >
                 <div class="tab-pane fade show active"  style="background: transparent !important" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <h3 class="register-heading text-white" >¡ INSERTA TUS DATOS AHORA ¡</h3>
+                    <h3 class="register-heading text-white" >¡ DAME TUS DATOS AHORA ¡</h3>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 

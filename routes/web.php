@@ -17,11 +17,12 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ConsultaController;
-
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\UserAdmin;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 
@@ -34,18 +35,13 @@ Route::get('template',function(){
 });
 
 // Calculate Amount
-Route::get('/calculateAmount',function(){
-    return view('showAmount');
-})->name('showAmount');
+Route::get('/calculateAmount/{id}',[PaymentController::class,'index'])->name('showAmount');
 
 
 Route::get('/confirmationBuy',function(){
     return view('confirmationBuy');
 })->name('confirmationBuy');
 
-// Route::resource('user', [UserController::class]);
-
-// Route::get('/showAllBus',[ItinerarioController::class,'index'])->name('showAllBus');
 Route::get('/fetch-price',[ItinerarioController::class,'fetchPrice']);
 Route::get('/fetch-service',[ItinerarioController::class,'fetchService']);
 Route::get('/fetch-result-terminal',[ItinerarioController::class,'fetchResultTerminal']);
@@ -59,14 +55,30 @@ Route::get('registrar',function(){
 Route::get('perfil',function(){
     return view('perfil');
 });
-// Route::post('ResultadoConsulta', [CarController::class,'consulta_datos'])->name('result_query');
 Route::post('ResultadoConsulta', [ItinerarioController::class,'consulta_datos'])->name('result_query');
 
 
 
+Route::get('verConsulta', [ConsultaController::class,'verConsulta']);
 Route::get('perfil2',[UserController::class,'index'])->name('perfilUserNow');
 Route::post('perfil2',[UserController::class,'editUser'])->name('perfilEditNow');
 
 Route::get('hogar',function(){
     return view('hogar');
+});
+Route::get('perfil2/misPasajes',[UserController::class,'misPasajes'])->name('misPasajes');
+
+
+Route::post('paymentMethod',[PaymentController::class,'paymentExecute'])->name('paymentMethod')->middleware('auth');
+
+Route::group(['middleware' => 'admin'], function () {
+    Route::resource('userAdminClient', UserAdmin::class);
+    Route::get('userAdminClient/edit/per',[UserAdmin::class,'edit'])->name('userAdminClient.edit.personalize');
+    Route::get('userAdminClient/delete/per',[UserAdmin::class,'delete'])->name('userAdminClient.delete.personalize');    
+    Route::get('/fetch-dni',[UserAdmin::class,'fetch_dni']);    
+    Route::put('/fetch-data-all',[UserAdmin::class,'update']);    
+});
+
+Route::get('login1',function(){
+    return view('login1');
 });

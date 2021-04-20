@@ -43,7 +43,7 @@
             <div class="fl col-2 p-right-10 w-15  d-flex justify-content-center">{{ $Itinerario->iti_quantitySeat }}</div>
         </div>
         <div class="m-top-20 d-flex justify-content-end col-md-12">
-            <button class="btn btn-1 btn-3">VER ASIENTOS DISPONIBLES</button>
+            <a class="btn btn-1 btn-3" href="{{ route('showAmount',[$Itinerario->id]) }}">VER ASIENTOS DISPONIBLES</a>
         </div>
     </li>
 </div>                      

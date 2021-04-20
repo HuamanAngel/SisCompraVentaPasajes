@@ -28,7 +28,17 @@ class UserController extends Controller
             $errorRegisterFailed = "No se actualizar "; 
             return back()->withErrors($validacion,'productRegisterForm')->with('registerFailed',$errorRegisterFailed)->withInput();
         }
-        auth()->user()->update(['use_name'=>$request->name,'use_apellido'=>$request->lastname,'email'=>$request->email,'use_tel'=>$request->telefono]);
+        auth()->user()->update(
+            [
+            'use_name'=>$request->name,
+            'use_apellido'=>$request->lastname,
+            'email'=>$request->email,
+            'use_tel'=>$request->telefono
+            ]);
         return back()->with('updateSuccess',"Actualizado correctamente");
+    }
+
+    public function misPasajes(){
+        return view('misPasajes');
     }
 }
