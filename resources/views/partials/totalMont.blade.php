@@ -71,27 +71,27 @@
                                                 <div class="form-group">
                                                     <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-envelope"></i></span>
                                                     <div class="col-md-12">
-                                                        <input id="fname" name="name" type="text" placeholder="Ingrese su Correo Electrónico" class="form-control">
+                                                        <input id="fname" name="name" type="number" required placeholder="CVV" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-calendar"></i></span>
                                                     <div class="col-md-12">
-                                                        <input id="lname" name="name" type="text" placeholder="Mes de expiración" class="form-control">
+                                                        <input id="lname" name="name" type="number" required placeholder="Mes de expiración" class="form-control">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-calendar"></i></span>
                                                     <div class="col-md-12">
-                                                        <input id="email" name="email" type="text" placeholder="Año de expiración" class="form-control">
+                                                        <input id="email" name="email" type="number" required placeholder="Año de expiración" class="form-control">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-credit-card"></i></span>
                                                     <div class="col-md-12">
-                                                        <input id="phone" name="phone" type="text" placeholder="Numero de la Tarjeta" class="form-control">
+                                                        <input id="phone" name="phone" type="text" required placeholder="Numero de la Tarjeta" class="form-control">
                                                     </div>
                                                 </div>
 
