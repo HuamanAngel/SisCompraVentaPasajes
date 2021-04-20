@@ -52,7 +52,68 @@
         <input type="hidden" name="costoUbicacion" class="inputUbicacion" value="">
         <input type="hidden" name="costoTotal" class="inputTotal" value="">
         <div class="pb-2 d-flex justify-content-center">
-            <button type="submit" class="btn btn-info text-white" style="font-weight: bold">Comprar pasaje</button>
+            <button class="btn btn-info text-white" type="button" style="font-weight: bold" data-toggle="modal" data-target='#modal1'>Comprar Pasaje</button>
+        </div>
+        <div class="modal" tabindex="-1" id='modal1'>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" >
+                        <h4 class="modal-title">Realizar Pago</h4>
+                    </div>
+                    <div class="modal-body" >
+
+                            <div class="row-md-20" >
+                                <div class="col-md-12">
+                                    <div class="well well-sm">
+                                        <form class="form-horizontal" method="post">
+                                            <fieldset>
+
+                                                <div class="form-group">
+                                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fas fa-envelope"></i></span>
+                                                    <div class="col-md-12">
+                                                        <input id="fname" name="name" type="text" placeholder="Ingrese su Correo Electrónico" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-calendar"></i></span>
+                                                    <div class="col-md-12">
+                                                        <input id="lname" name="name" type="text" placeholder="Mes de expiración" class="form-control">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-calendar"></i></span>
+                                                    <div class="col-md-12">
+                                                        <input id="email" name="email" type="text" placeholder="Año de expiración" class="form-control">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-credit-card"></i></span>
+                                                    <div class="col-md-12">
+                                                        <input id="phone" name="phone" type="text" placeholder="Numero de la Tarjeta" class="form-control">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="col-md-12 text-center">
+                                                        <button type="submit" class="btn btn-success">Efectuar Pago</button>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" data-dismiss='modal'>cerrar</button>
+
+                    </div>
+                </div>
+
+            </div>
         </div>
     </form>
 </div>
