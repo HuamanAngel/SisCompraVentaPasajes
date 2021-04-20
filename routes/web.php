@@ -21,7 +21,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\UserAdmin;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('hogar');
 })->name('welcome');
 
 Auth::routes();
