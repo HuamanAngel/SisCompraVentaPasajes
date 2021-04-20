@@ -66,3 +66,7 @@ Route::post('ResultadoConsulta', [ItinerarioController::class,'consulta_datos'])
 
 Route::get('perfil2',[UserController::class,'index'])->name('perfilUserNow');
 Route::post('perfil2',[UserController::class,'editUser'])->name('perfilEditNow');
+
+Route::get('hogar',function(){
+    return view('hogar');
+});

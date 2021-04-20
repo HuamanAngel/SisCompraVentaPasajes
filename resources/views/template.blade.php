@@ -11,6 +11,8 @@
 
 
 @section('content')
+
+
 @endsection
 
 @section('contenido_abajo_js')
