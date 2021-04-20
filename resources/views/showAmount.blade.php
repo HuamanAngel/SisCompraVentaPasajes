@@ -12,7 +12,9 @@
 
 
 @section('content')
-
+<body>
+<br>
+<br>
 <div class="container">
     <div class="row">
         <div class="col-md-8">
@@ -45,7 +47,7 @@
 
 
 
-
+            <br>
             <h4 class="py-4">Piso 2</h4>
 
 
@@ -125,11 +127,13 @@
 
         </div>
         <div class="col-md-4">
+        <br>
             @include('partials.totalMont')
         </div>
     </div>
 
 </div>
+</body>
 
 @endsection
 
