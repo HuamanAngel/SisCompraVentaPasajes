@@ -64,7 +64,7 @@
                                             <td>{{ $compra->compraPasaje->pas_numero_asiento }}</td>
                                             <td>{{ Auth::user()->use_dni }}</td>
                                             <td>{{ $compra->com_monto_compra }}</td>
-                                            <td><i class="fa fa-download" aria-hidden="true"></i></td>
+                                            <td><a class="btn" href="{{ route('PassagePdf',$compra->id) }}" target="_blank"><i class="fa fa-download" aria-hidden="true"></i></a></td>
                                         </tr>    
                                     @endforeach
                                 </tbody>

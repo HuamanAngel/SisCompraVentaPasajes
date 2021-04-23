@@ -41,4 +41,15 @@ class UserController extends Controller
     public function misPasajes(){
         return view('misPasajes');
     }
+    public function downloadPassage($id){
+
+        $valor = auth()->user()->userCompra->where('id',$id)->first();
+        $pdf = app('dompdf.wrapper');
+        $data = [
+            'compra' => $valor
+        ];          
+        $pdf = \PDF::loadView('pdf.pdfPassage', $data);        
+        return $pdf->stream('mi-archivo.pdf');        
+
+    }
 }

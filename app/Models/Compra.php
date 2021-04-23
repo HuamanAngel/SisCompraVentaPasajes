@@ -25,4 +25,7 @@ class Compra extends Model
     public function compraPasaje(){
         return $this->belongsTo(Pasaje::class,'pas_id');
     }
+    public function compraUser(){
+        return $this->belongsTo(User::class,'use_id');
+    }
 }

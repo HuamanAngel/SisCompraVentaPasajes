@@ -79,6 +79,10 @@ Route::group(['middleware' => 'admin'], function () {
     Route::put('/fetch-data-all',[UserAdmin::class,'update']);    
 });
 
+
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/user/getPassagePdf/{id}',[UserController::class,'downloadPassage'])->name('PassagePdf');
+});
 Route::get('login1',function(){
     return view('login1');
 });
